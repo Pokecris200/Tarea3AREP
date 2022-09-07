@@ -20,7 +20,6 @@ import java.util.Map;
 public class MySpring {
 
     public static void main(String[] args) throws ClassNotFoundException, IOException, URISyntaxException, IllegalAccessException, IllegalArgumentException, InvocationTargetException, InvocationTargetException {
-        System.out.println(args[0]);
         String className = args[0];
         Class C = Class.forName(className);
         Map<String, Method> methods = new HashMap<>();
@@ -73,7 +72,7 @@ public class MySpring {
             
             // Ejecuta Metodos
             String content = "404 NOT FOUND";
-            if(!methods.isEmpty()&& methods.containsKey(path.getPath())){
+            if(methods.containsKey(path)){
                 content = (String) methods.get(path.getPath()).invoke(null);
             }
             
