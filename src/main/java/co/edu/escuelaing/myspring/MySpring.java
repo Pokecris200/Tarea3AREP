@@ -72,7 +72,7 @@ public class MySpring {
             
             // Ejecuta Metodos
             String content = "404 NOT FOUND";
-            if(methods.containsKey(path.getPath())){
+            if(!methods.isEmpty()&& methods.containsKey(path.getPath())){
                 content = (String) methods.get(path.getPath()).invoke(null);
             }
             
