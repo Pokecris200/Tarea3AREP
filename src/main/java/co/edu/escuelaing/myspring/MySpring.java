@@ -35,6 +35,7 @@ public class MySpring {
         // Web Server Implementation
         boolean running = true;
         ServerSocket serverSocket = null;
+        System.out.println(getPort());
         try {
             serverSocket = new ServerSocket(getPort());
         } catch (IOException e) {

@@ -1,1 +1,1 @@
-web: java -cp target/classes co.edu.escuelaing.myspring.MySpring co.edu.escuelaing.myspring.WebServices
+web: java java $JAVA_OPTS -cp target/classes co.edu.escuelaing.myspring.MySpring co.edu.escuelaing.myspring.WebServices
