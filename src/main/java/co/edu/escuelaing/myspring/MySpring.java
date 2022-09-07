@@ -20,6 +20,7 @@ import java.util.Map;
 public class MySpring {
 
     public static void main(String[] args) throws ClassNotFoundException, IOException, URISyntaxException, IllegalAccessException, IllegalArgumentException, InvocationTargetException, InvocationTargetException {
+        System.out.println(args[0]);
         String className = args[0];
         Class C = Class.forName(className);
         Map<String, Method> methods = new HashMap<>();
