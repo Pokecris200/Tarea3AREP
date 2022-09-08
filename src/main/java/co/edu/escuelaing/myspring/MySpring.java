@@ -57,12 +57,12 @@ public class MySpring {
                             clientSocket.getInputStream()));
             String inputLine, outputLine;
             String name;
-            URI path = null;
+            String path = null;
             boolean first = true;
             while ((inputLine = in.readLine()) != null) {
                 if (first) {
                     first = false;
-                    path = new URI(inputLine.split(" ")[1]);
+                    path = inputLine.split(" ")[1];
                 }
                 System.out.println("Received: " + inputLine);
                 if (!in.ready()) {
@@ -73,7 +73,7 @@ public class MySpring {
             // Ejecuta Metodos
             String content = "404 NOT FOUND";
             if(methods.containsKey(path)){
-                content = (String) methods.get(path.getPath()).invoke(null);
+                content = (String) methods.get(path).invoke(null);
             }
             
             outputLine = "HTTP/1.1 200 OK\r\n"
